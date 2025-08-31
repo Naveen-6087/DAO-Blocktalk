@@ -5,7 +5,7 @@ import { useGetValue } from './web3/GetCurrentValue';
 import { useGetBalance } from './web3/GetTokenBalance';
 import { useRequestFunds } from './web3/GetFunds';
 import { useCreateProposal } from './web3/NewProposal';
-import { BrowserRouter, Routes, Route, Link, Navigate } from 'react-router-dom';
+import { HashRouter as Router, Routes, Route, Link, Navigate } from 'react-router-dom';
 import HomePage from './pages/HomePage';
 import FundsPage from './pages/FundsPage';
 import ProposePage from './pages/ProposePage';
@@ -37,7 +37,7 @@ function App() {
   // }, [signer, getBalance]);
 
   return (
-    <BrowserRouter>
+    <Router>
       <div className="min-h-screen bg-gradient-to-b from-slate-950 via-slate-900 to-purple-950 text-slate-100">
         <Header connectToMetamask={connectToMetamask} isConnected={isConnected} account={account} signer={signer} userBalance={userBalance} />
         <nav className="mx-auto max-w-6xl px-4 py-4 flex gap-2">
@@ -61,7 +61,7 @@ function App() {
         </main>
         {/* Footer removed as requested */}
       </div>
-    </BrowserRouter>
+    </Router>
   );
 }
 
